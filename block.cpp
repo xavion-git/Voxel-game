@@ -32,3 +32,24 @@ pRenderer->ImmediateVertex(l_length, -l_height, l_width);
 pRenderer->ImmediateVertex(l_length, -l_height, -l_width);
 pRenderer->ImmediateVertex(l_length, l_height, -l_width);
 pRenderer->ImmediateVertex(l_length, l_height, l_width);
+// Right face
+pRenderer->ImmediateNormal(-1.0 f, 0.0 f, 0.0 f);
+pRenderer->ImmediateVertex(-l_length, -l_height, -l_width);
+pRenderer->ImmediateVertex(-l_length, -l_height, l_width);
+pRenderer->ImmediateVertex(-l_length, l_height, l_width);
+pRenderer->ImmediateVertex(-l_length, l_height, -l_width);
+// Top face
+pRenderer->ImmediateNormal(0.0 f, -1.0 f, 0.0 f);
+pRenderer->ImmediateVertex(-l_length, -l_height, -l_width);
+pRenderer->ImmediateVertex(l_length, -l_height, -l_width);
+pRenderer->ImmediateVertex(l_length, -l_height, l_width);
+pRenderer->ImmediateVertex(-l_length, -l_height, l_width);
+// Bottom face
+pRenderer->ImmediateNormal(0.0 f, 1.0 f, 0.0 f);
+pRenderer->ImmediateVertex(l_length, l_height, -l_width);
+pRenderer->ImmediateVertex(-l_length, l_height, -l_width);
+pRenderer->ImmediateVertex(-l_length, l_height, l_width);
+pRenderer->ImmediateVertex(l_length, l_height, l_width);
+
+pRenderer->DisableImmediateMode();
+pRenderer->PopMatrix(); // Restore the previous world matrix.
